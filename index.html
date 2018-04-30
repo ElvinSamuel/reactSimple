@@ -10,6 +10,10 @@
     directly by the component.
 -->
 
+<!--
+    Let's take it a step further. Let's CHANGE the state now.
+-->
+
 <head>
     <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
@@ -29,10 +33,23 @@
                 this.state = {
                     message: "my friend (from state)!"
                 };
+                
+                this.updateMessage = this.updateMessage.bind(this);
+            }
+            
+            updateMessage() {
+                this.setState({
+                    message: "my friend (from changed state)!"
+                });
             }
             
             render() { 
-                return <h1>Hello {this.state.message}!</h1>; 
+                return (
+                    <div>
+                        <h1>Hello {this.state.message}!</h1>
+                        <button onClick={this.updateMessage}>Click me!</button>
+                    </div>
+                )
             } 
         }
         
