@@ -5,13 +5,10 @@
     Totally forgot HTML comments were different. Embarrassing. 
 -->
 
-<!--// Messing with VIM and with branches!!! On the 'State' branch of my React Project-->
-
-<!--// You workin?-->
-
-<!--// Gonna add this to the usingState branch-->
-
-<!--// Does THIS work though? We'll see...-->
+<!--
+    States the other way of handling data in React. They CAN be changed
+    directly by the component.
+-->
 
 <head>
     <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
@@ -27,10 +24,15 @@
         class Hello extends React.Component { 
             
             // Adding a 'state' into the mix.
-            
+            constructor(){
+                super();
+                this.state = {
+                    message: "my friend (from state)!"
+                };
+            }
             
             render() { 
-                return <h1>Hello {this.props.message}!</h1>; 
+                return <h1>Hello {this.state.message}!</h1>; 
             } 
         }
         
